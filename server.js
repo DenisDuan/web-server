@@ -1,20 +1,10 @@
 var express = require('express');
 var app = express();
+var middleware = require('./middleware.js');
 var SEVER_PORT = 3000;
 
 // The middleware is added in between the request
-var middleware = {
-    requireAuthentication: function (req, res, next) {
-        console.log('private route hit!');
-        next();
-    }, 
-    logger: function (req, res, next){
-        var dateStr = new Date().toString();
 
-        console.log('Request datetime: ' + dateStr + ' method: '  + req.method + ' ' + req.originalUrl );
-        next();
-    }
-} ;
 
 app.use(middleware.logger);
 
