@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var middleware = require('./middleware.js');
-var SEVER_PORT = 3000;
+var SEVER_PORT = process.env.PORT || 3000;
 
 // The middleware is added in between the request
 
